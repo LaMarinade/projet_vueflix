@@ -1,8 +1,6 @@
 <template>
-  <div id="app">
+  <div id="app" class="bg-gray-100">
     <Header :userLoggedIn="userLoggedIn" :userName="userName" :image="image" :toggleUserStatus="toggleUserStatus"/>
-    <router-link to="/">Accueil</router-link>
-    <router-link to="/about">À propos</router-link>
     <router-view />
     <Footer :numberOfFilms="numberOfFilms" :currentYear="currentYear"/>
   </div>
@@ -15,7 +13,7 @@ import Footer from "./components/Footer.vue";
 import { RouterLink, RouterView } from 'vue-router'
 
 const userLoggedIn = ref(false);
-const userName = ref('John Doe');
+const userName = ref('Marinade');
 const image = ref('./img/avatar-vueflix.png'); 
 
 const toggleUserStatus = () => {
@@ -25,7 +23,6 @@ const toggleUserStatus = () => {
 const numberOfFilms = ref(2446); // Remplacez 10 par la valeur réelle
 const currentYear = ref(new Date().getFullYear());
 </script>
-
 
 <style>
 /* Styles globaux pour votre application */
