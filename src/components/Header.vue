@@ -8,21 +8,18 @@
     </header>
   </template>
   
+
   <script setup>
-import { ref } from 'vue';
-import image from "../../img/avatar-vueflix.png";
+    import { ref, defineProps } from 'vue';
 
-const userLoggedIn = ref(false);
-const userName = ref("Nom de l'utilisateur");
-
-const toggleUserStatus = () => {
-  userLoggedIn.value = !userLoggedIn.value;
-};
+    const props = defineProps(['userLoggedIn', 'userName', 'toggleUserStatus', 'image']);
   </script>
+
   
   <style scoped>
   .avatar-img{
     width: 100px;
+    border-radius: 50%;
   }
   </style>
   

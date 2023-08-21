@@ -1,6 +1,5 @@
 <template>
- 
-<div class="flex flex-col space-y-4">
+   <div class="flex flex-col space-y-4">
     <div class="bg-white p-4 rounded-md flex">
        <div class="w-16 h-16 rounded-full overflow-hidden">
           <img src="chemin_vers_image" alt="Photo du développeur" class="object-cover h-full w-full">
@@ -13,4 +12,9 @@
     </div>
 
  </div>
- </template>
+</template>
+
+
+
+<script>
+</script>
