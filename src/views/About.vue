@@ -1,8 +1,6 @@
 <template>
         <h1 class="text-2xl font-semibold mx-auto mt-4 text-center">Notre Équipe</h1>
-        <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-4"> -->
-            <div class=" container mx-auto p-8 flex items-center">
-
+            <div class=" container mx-auto flex">
                 <Card
               v-for="(member, index) in teamMembers"
               :key="index"
@@ -21,24 +19,33 @@
   
   const teamMembers = [
     {
-      profileImage: '../img/avatar-vueflix.png',
+      profileImage: '../img/manager.png',
       name: 'Marinade',
       role: 'Manager',
       bio: 'Biographie du manager...'
     },
     {
-      profileImage: '../img/avatar-vueflix.png',
-      name: 'Marinade',
-      role: 'Manager',
-      bio: 'Biographie du manager...'
+      profileImage: '../img/developer.png',
+      name: 'Joe',
+      role: 'Developer',
+      bio: 'Biographie du dev...'
     },
     {
-      profileImage: '../img/avatar-vueflix.png',
-      name: 'Marinade',
-      role: 'Manager',
-      bio: 'Biographie du manager...'
+      profileImage: '../img/commerciale.png',
+      name: 'Shakya',
+      role: 'Commerciale',
+      bio: 'Biographie de la commerciale...'
     },
     // Ajoutez les autres membres ici
   ];
   </script>
   
+
+<style>
+
+.container{
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+</style>
