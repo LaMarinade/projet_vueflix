@@ -33,15 +33,15 @@ const toggle = () => (logged.value = !logged.value)
 
 <style scoped>
 .container{
-  margin-top: -30px;
-  margin-bottom: -30px;
+  margin-top: -35px;
+  margin-bottom: -35px;
 }
 .logo{
 width: 200px;
 }
 
 header {
-  background-color: rgb(56, 56, 95);
+  background-color: transparent;
   padding: 10px 0;
 }
   .flex {

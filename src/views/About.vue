@@ -48,4 +48,8 @@
     flex-direction: row;
     justify-content: center;
 }
+
+h1{
+  color: white;
+}
 </style>

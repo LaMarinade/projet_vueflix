@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="bg-gray-100">
+  <div id="app" class="app-cover">
     <Header :userLoggedIn="userLoggedIn" :userName="userName" :image="image" :toggleUserStatus="toggleUserStatus"/>
     <router-view />
     <Footer :numberOfFilms="numberOfFilms" :currentYear="currentYear"/>
@@ -20,10 +20,26 @@ const toggleUserStatus = () => {
    userLoggedIn.value = !userLoggedIn.value;
 };
 
-const numberOfFilms = ref(2446); // Remplacez 10 par la valeur réelle
+const numberOfFilms = ref(2446); 
 const currentYear = ref(new Date().getFullYear());
 </script>
 
 <style>
-/* Styles globaux pour votre application */
+.app-cover {
+
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.9), /* Couleur d'ombre en haut */
+    transparent,
+    transparent,
+    transparent,
+    rgba(0, 0, 0, 0.9) /* Couleur d'ombre en bas */
+  ), url('/img/vueflix-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
 </style>
+ <!-- background-image: url('img/vueflix-background.png');
+  background-repeat: no-repeat;
+  background-size: cover; -->

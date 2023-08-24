@@ -45,7 +45,7 @@ const showBio = () => {
 <style scoped>
 
 .container-card{
-  background-color: white;
+  background-color: rgba(122, 118, 118, 0.8);
   width: 450px;
   height: 200px;
   margin: 10px;
