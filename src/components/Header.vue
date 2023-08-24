@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import Button from './Button.vue'
+import VueFlixLogo from '../../img/vueflix-logo.png'
 
 const logged = ref(false)
 const toggle = () => (logged.value = !logged.value)
@@ -12,7 +13,7 @@ const toggle = () => (logged.value = !logged.value)
     <div class="container">
       <div class="flex">
         <h1>
-          <RouterLink to="/">Vue<span class="red">Flix</span></RouterLink>
+          <RouterLink to="/"><img class="logo" :src="VueFlixLogo" alt="Logo" /></RouterLink>
         </h1>
         <nav class="flex">
           <RouterLink to="/">Accueil</RouterLink>
@@ -31,9 +32,17 @@ const toggle = () => (logged.value = !logged.value)
 </template>
 
 <style scoped>
+.container{
+  margin-top: -30px;
+  margin-bottom: -30px;
+}
+.logo{
+width: 200px;
+}
+
 header {
   background-color: rgb(56, 56, 95);
-  padding: 16px 0;
+  padding: 10px 0;
 }
   .flex {
     align-items: center;

@@ -1,16 +1,18 @@
 <template>
     <p v-if="loading">Chargement en cours...</p>
     <div class="movies-container">
-        <div class="movie-card" v-for="movie in movies">
-            <div class="movie-img">
-                <img :src="movie.poster_path" alt="Affiche">
-                {{ movie.vote_average }}
-            </div>
-            <div class="movie-info">
-                <p class="movie-title"><strong>{{ movie.original_title }}</strong></p>
-                <p class="movie-release">{{ movie.release_date }}</p>
-            </div>
-            <button class="btn-voir-plus">Voir plus</button>
+        <div class="movie-card" v-for="movie in movies" :key="movie.id">
+      <router-link :to="{ name: 'FilmDetails', params: { id: movie.id } }" class="movie-img-link">
+                <div class="movie-img">
+                    <img :src="movie.poster_path" alt="Affiche">
+                    {{ movie.vote_average }}
+                </div>
+                <div class="movie-info">
+                    <p class="movie-title"><strong>{{ movie.original_title }}</strong></p>
+                    <p class="movie-release">{{ movie.release_date }}</p>
+                </div>
+            </router-link>
+            <button class="btn-ajout-panier">Ajouter au panier</button>
         </div>
     </div>
 </template>
@@ -20,7 +22,8 @@
 import { defineProps } from 'vue';
 const { loading, movies, genres } = defineProps(['loading', 'movies', 'genres']);
 
-const note = (note) => Math.ceil(note * 10)
+const note = (note) => Math.ceil(note * 10);
+  
 </script>
 
 <style scoped>
@@ -67,7 +70,7 @@ const note = (note) => Math.ceil(note * 10)
   transition: transform 0.3s ease-in-out; /* Ajout d'une transition fluide */
 }
 
-.btn-voir-plus{
+.btn-ajout-panier{
     color: white;
     background-color: #b91c1c;
     justify-content: center;
@@ -77,7 +80,7 @@ const note = (note) => Math.ceil(note * 10)
     border-radius: 5px;
 }
 
-.btn-voir-plus:hover{
+.btn-ajout-panier:hover{
     background-color: rgb(134, 38, 38);
     transition: transform 0.3s ease-in-out;
 }
